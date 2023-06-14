@@ -20,9 +20,15 @@ const bscMainnet: NetworkUserConfig = {
 };
 
 const config: HardhatUserConfig = {
-  defaultNetwork: "hardhat",
+  defaultNetwork: "inner",
   networks: {
     hardhat: {},
+    inner: {
+      chainId: 1337,
+      url: "http://192.168.1.105:8545",
+      accounts: process.env.ACCOUNTS ? process.env.ACCOUNTS.split(",") : undefined,
+      timeout: 60000,
+    },
     // testnet: bscTestnet,
     // mainnet: bscMainnet,
   },
