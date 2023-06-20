@@ -14,6 +14,7 @@ contract MockUSDT is ERC20 {
 
     function decimals() public view virtual override returns (uint8) {
         // in bsc is 18
-        return 18;
+        // in eth is 6
+        return 6;
     }
 }
